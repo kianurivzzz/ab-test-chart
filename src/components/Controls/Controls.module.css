@@ -1,24 +1,31 @@
 .controls {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   padding: 20px;
-  background: #ffffff;
+  background: var(--controls-bg, #ffffff);
   border-radius: 8px;
   margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .section {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: 1;
 }
 
 .sectionTitle {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary, #333);
 }
 
 .buttons {
@@ -29,13 +36,14 @@
 
 .button {
   padding: 8px 16px;
-  border: 1px solid #e0dee7;
-  background: #ffffff;
+  border: 1px solid var(--border-color, #e0dee7);
+  background: var(--button-bg, #ffffff);
   border-radius: 6px;
   font-size: 14px;
-  color: #666;
+  color: var(--text-secondary, #666);
   cursor: pointer;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .button:hover:not(:disabled):not(.selected) {
@@ -56,9 +64,8 @@
 }
 
 @media (min-width: 768px) {
-  .controls {
+  .row {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    gap: 24px;
   }
 }

@@ -78,7 +78,8 @@ export const processDataForChart = (
 
 export const getYAxisDomain = (
   data: ProcessedDataPoint[],
-  selectedVariations: Set<string>
+  selectedVariations: Set<string>,
+  lineStyle?: string
 ): [number, number] => {
   let min = Infinity;
   let max = -Infinity;
@@ -97,7 +98,7 @@ export const getYAxisDomain = (
     return [0, 40];
   }
 
-  // Добавляем отступы
-  const padding = (max - min) * 0.1;
+  const paddingMultiplier = lineStyle === 'natural' || lineStyle === 'area' ? 0.2 : 0.1;
+  const padding = (max - min) * paddingMultiplier;
   return [Math.max(0, Math.floor(min - padding)), Math.ceil(max + padding)];
 };

@@ -20,3 +20,10 @@ export interface ProcessedDataPoint {
 }
 
 export type TimeRange = 'day' | 'week';
+
+export type LineStyle = 'monotone' | 'natural' | 'area';
+
+export interface ZoomState {
+  left: number | null;
+  right: number | null;
+}
