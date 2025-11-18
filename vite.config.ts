@@ -7,5 +7,5 @@ export default defineConfig({
     react(),
     svgr()
   ],
-  base: '/frontend-interview-task/',
+  base: '/ab-test-chart/',
 })
